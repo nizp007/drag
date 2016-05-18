@@ -7,8 +7,8 @@ function Drag(id){
 	},false);
 }
 Drag.prototype.fnDown = function(ev){
-	this.disX = ev.clientX - this.obj.offsetLeft;
-	this.disY = ev.clientY - this.obj.offsetTop;
+	this.disX = ev.pageX - this.obj.offsetLeft;
+	this.disY = ev.pageY - this.obj.offsetTop;
 	var _this = this;
 	document.addEventListener('mousemove',move,false);
 	function move(ev){
