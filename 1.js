@@ -25,3 +25,8 @@ Drag.prototype.fnDown = function(ev){
 		_this.fnUp(move,up);
 	}
 }
+Drag.prototype.fnUp = function(move,up){
+	document.removeEventListener('mousemove',move,false);
+	document.removeEventListener('mouseup',up,false);
+}
+
