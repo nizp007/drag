@@ -10,3 +10,18 @@ Drag.prototype.fnMove = function(ev){
 	this.obj.style.left = ev.pageX - this.disX + 'px';
 	this.obj.style.top = ev.pageY - this.disY + 'px';
 }
+
+Drag.prototype.fnDown = function(ev){
+	this.disX = ev.pageX - this.obj.offsetLeft;
+	this.disY = ev.pageY - this.obj.offsetTop;
+	var _this = this;
+	document.addEventListener('mousemove',move,false);
+	document.addEventListener('mouseup',up,false);
+	function move(ev){
+		var e = ev || window.event;
+		_this.fnMove(e);
+	}
+	function up(){
+		_this.fnUp(move,up);
+	}
+}
