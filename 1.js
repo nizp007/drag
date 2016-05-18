@@ -16,3 +16,7 @@ Drag.prototype.fnDown = function(ev){
 		_this.fnMove(e);
 	}
 }
+Drag.prototype.fnMove = function(ev){
+	this.obj.style.left = ev.pageX - this.disX + 'px';
+	this.obj.style.top = ev.pageY - this.disY + 'px';
+}
