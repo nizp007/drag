@@ -11,8 +11,10 @@ Drag.prototype.fnDown = function(ev){
 	this.disY = ev.pageY - this.obj.offsetTop;
 	var _this = this;
 	document.addEventListener('mousemove',move,false);
-	
+
 	document.addEventListener('mouseup',up,false);
+	
+	//move主要是为了在解除绑定的时候，保证解除的函数是一个有名函数
 	function move(ev){
 		var e = ev || window.event;
 		_this.fnMove(e);
